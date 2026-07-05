@@ -1,0 +1,38 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install curl for ngrok download and supervisor for process management
+RUN apt-get update && \
+    apt-get install -y curl unzip supervisor && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install ngrok
+RUN curl -sSL https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz \
+    -o ngrok.tgz && \
+    tar -xzf ngrok.tgz && \
+    mv ngrok /usr/local/bin/ngrok && \
+    chmod +x /usr/local/bin/ngrok && \
+    rm ngrok.tgz
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application files
+COPY main.py .
+COPY supervisord-ngrok.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Create a non-root user and set up directories
+RUN useradd -m -u 1000 farmer && \
+    mkdir -p /home/farmer/recordings /home/farmer/hive_conditions /data /var/log/supervisor && \
+    chown -R farmer:farmer /home/farmer /data /app /var/log/supervisor
+
+# Switch to non-root user
+USER farmer
+
+EXPOSE 8000
+
+# Start both FastAPI and ngrok via supervisor
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

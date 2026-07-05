@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  farmer-api-local:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Use regular Dockerfile WITHOUT ngrok
+    container_name: farmer-api-local
+    ports:
+      - "8000:8000"  # Local port 8000
+    volumes:
+      - ./recordings:/home/farmer/recordings
+      - ./hive_conditions:/home/farmer/hive_conditions
+      - ./data:/data
+    environment:
+      - ADMIN_KEY=${ADMIN_KEY:-admin-secret-changeme}
+      - RECORDINGS_DIR=/home/farmer/recordings
+      - HIVE_CONDITIONS_DIR=/home/farmer/hive_conditions
+      - KEYS_FILE=/data/api_keys.json
+    restart: unless-stopped

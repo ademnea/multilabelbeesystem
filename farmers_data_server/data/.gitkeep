@@ -1,0 +1,2 @@
+# This file ensures the data directory is tracked by git
+# while api_keys.json is ignored (contains sensitive data)

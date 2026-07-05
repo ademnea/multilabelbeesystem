@@ -1,0 +1,54 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.venv/
+env/
+ENV/
+
+# Environment files (copied separately)
+.env
+.env.*
+!.env.example
+
+# Documentation
+*.md
+!API.md
+
+# Development files
+docker-compose.yml
+railway.toml
+RAILWAY_MIGRATION_GUIDE.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+test_*.py
+
+# Uploads (uses volume mount)
+uploads/*
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Misc
+.DS_Store
+Thumbs.db
