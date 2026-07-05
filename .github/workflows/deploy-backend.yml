@@ -12,7 +12,7 @@ on:
 env:
   DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/bsads-api
   CONTAINER_NAME: bsads-api-production
-  SERVER_HOST: 196.43.168.57
+  SERVER_HOST: ${{ secrets.SERVER_HOST }}
   SERVER_USER: ademneadev
   SERVER_PORT: 8085
 
