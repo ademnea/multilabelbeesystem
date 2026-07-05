@@ -1,0 +1,612 @@
+import { StyleSheet } from "react-native";
+import { THEME } from "../../theme";
+
+type ThemeSnapshot = typeof THEME;
+
+export function createDashboardStyles(t: ThemeSnapshot) {
+  return StyleSheet.create({
+  centerState: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+    padding: 24,
+  },
+  stateText: {
+    color: t.textMuted,
+    fontWeight: "600",
+    fontSize: 14,
+  },
+  errorTitle: {
+    fontSize: 16,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  errorBody: {
+    color: "#B91C1C",
+    fontSize: 13,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  primaryButtonSmall: {
+    marginTop: 12,
+    backgroundColor: t.accent,
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    alignItems: "center",
+    justifyContent: "center",
+    alignSelf: "center",
+  },
+  primaryButtonText: {
+    color: t.primary,
+    fontWeight: "800",
+    fontSize: 15,
+  },
+  appPage: {
+    paddingHorizontal: 14,
+    paddingTop: 14,
+    paddingBottom: 32,
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: "800",
+    color: t.text,
+    marginBottom: 10,
+  },
+  card: {
+    backgroundColor: t.surface,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 14,
+  },
+  cardTitle: {
+    fontSize: 15,
+    fontWeight: "800",
+    color: t.primary,
+    marginBottom: 2,
+  },
+  cardSubtitle: {
+    fontSize: 11,
+    color: t.textMuted,
+    fontWeight: "600",
+  },
+  rowBetween: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  gridTwo: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    rowGap: 10,
+    columnGap: 0,
+    marginBottom: 14,
+    },
+    gridThree: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: 12,
+    },
+  // ── Dashboard alert card ──
+  dashboardAlertsCard: {
+    backgroundColor: t.surface,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 14,
+    padding: 14,
+    marginBottom: 14,
+  },
+  dashboardAlertsTopRow: {
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    marginBottom: 10,
+  },
+  dashboardAlertsTitleWrap: { flex: 1 },
+  dashboardAlertsTitle: {
+    fontSize: 15,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  dashboardAlertsSubTitle: {
+    fontSize: 11,
+    color: t.textMuted,
+    fontWeight: "600",
+    marginTop: 2,
+  },
+  hiveAlertCountBadge: {
+    backgroundColor: t.surfaceSoft,
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 3,
+    borderWidth: 1,
+    borderColor: t.line,
+  },
+  hiveAlertCountText: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: t.textMuted,
+  },
+  dashboardAlertMenuRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginBottom: 8,
+  },
+  dashboardAlertMenuChip: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 999,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    backgroundColor: t.surface,
+  },
+  dashboardAlertMenuChipActive: {
+    backgroundColor: t.primary,
+    borderColor: t.primary,
+  },
+  dashboardAlertMenuChipText: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: t.primary,
+  },
+  dashboardAlertMenuChipTextActive: {
+    color: t.surface,
+  },
+  dashboardAlertSubMenu: {
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 12,
+    backgroundColor: t.surface,
+    padding: 10,
+    marginBottom: 8,
+    gap: 8,
+  },
+  dashboardAlertSubMenuHeader: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  dashboardAlertSubMenuTitle: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: t.primary,
+  },
+dashboardAlertSubMenuCloseBtn: {
+    padding: 4,
+    borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: t.surface,
+    borderWidth: 1,
+    borderColor: t.line,
+  },
+  dashboardAlertSubMenuDot: {
+    width: 7,
+    height: 7,
+    borderRadius: 4,
+  },
+  dashboardAlertSubMenuList: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 8,
+  },
+  dashboardAlertSubMenuItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 999,
+    backgroundColor: t.surface,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  dashboardAlertSubMenuItemActive: {
+    borderColor: t.primary,
+    backgroundColor: t.surfaceSoft,
+  },
+  dashboardAlertSubMenuItemText: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: t.text,
+    maxWidth: 160,
+  },
+  dashboardAlertSubMenuItemTextActive: {
+    color: t.primary,
+  },
+  dashboardAlertSubMenuEmpty: {
+    fontSize: 11,
+    color: t.textMuted,
+    fontWeight: "600",
+  },
+  dashboardAlertsInlineError: {
+    marginTop: 8,
+    fontSize: 11,
+    color: "#B91C1C",
+    fontWeight: "600",
+  },
+  dashboardAlertScroller: {
+    marginTop: 10,
+    gap: 8,
+    paddingRight: 4,
+  },
+  dashboardAlertCompactCard: {
+    width: 165,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 12,
+    backgroundColor: t.surface,
+    padding: 10,
+    gap: 5,
+  },
+  dashboardAlertCompactCardActive: {
+    borderColor: t.primary,
+    backgroundColor: t.surfaceSoft,
+  },
+  dashboardAlertCompactTopRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 5,
+  },
+  dashboardAlertCompactDot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+  },
+  dashboardAlertCompactHive: {
+    fontSize: 10,
+    fontWeight: "700",
+    color: t.textMuted,
+  },
+  dashboardAlertCompactTitle: {
+    fontSize: 12,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  dashboardAlertCompactDate: {
+    fontSize: 10,
+    color: t.textMuted,
+    fontWeight: "600",
+  },
+  dashboardAlertsEmptyState: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 6,
+    borderWidth: 1,
+    borderColor: "#BBF7D0",
+    backgroundColor: "#F0FDF4",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+  },
+  dashboardAlertsEmptyStateText: {
+    fontSize: 11,
+    color: "#166534",
+    fontWeight: "700",
+  },
+  dashboardAlertDetailsCard: {
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 12,
+    backgroundColor: t.surface,
+    padding: 12,
+    gap: 5,
+  },
+  dashboardAlertDetailsTitle: {
+    flex: 1,
+    marginRight: 8,
+    fontSize: 14,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  dashboardAlertDetailsSeverity: {
+    borderRadius: 999,
+    paddingHorizontal: 9,
+    paddingVertical: 4,
+  },
+  dashboardAlertDetailsSeverityText: {
+    fontSize: 11,
+    fontWeight: "800",
+  },
+  dashboardAlertDetailsMeta: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: t.textMuted,
+  },
+  dashboardAlertDetailsSummary: {
+    fontSize: 12,
+    lineHeight: 18,
+    color: t.text,
+  },
+  dashboardAlertDetailsLink: {
+    marginTop: 4,
+    alignSelf: "flex-start",
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 2,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 999,
+    backgroundColor: t.surfaceSoft,
+    paddingHorizontal: 10,
+    paddingVertical: 7,
+  },
+  dashboardAlertDetailsLinkText: {
+    fontSize: 11,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  // ── Overview tiles ──
+  overviewCardRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginBottom: 14,
+  },
+  overviewTile: {
+    flex: 1,
+    borderRadius: 12,
+    padding: 10,
+    alignItems: "center",
+    gap: 4,
+  },
+  overviewTileValue: {
+    fontSize: 20,
+    fontWeight: "800",
+    color: t.surface,
+  },
+  overviewTileLabel: {
+    fontSize: 10,
+    fontWeight: "800",
+    color: "rgb(255, 255, 255)",
+    textAlign: "center",
+  },
+  // ── Donut ──
+  donutRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+    paddingTop: 8,
+  },
+  donutLegend: {
+    flex: 1,
+    gap: 8,
+  },
+  donutLegendItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  donutLegendDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+  },
+  donutLegendLabel: {
+    flex: 1,
+    fontSize: 12,
+    color: t.text,
+    fontWeight: "600",
+  },
+  donutLegendCount: {
+    fontSize: 13,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  // ── Trend range ──
+  trendRangeRow: {
+    flexDirection: "row",
+    gap: 4,
+  },
+  trendRangeBtn: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: t.line,
+    backgroundColor: t.surface,
+  },
+  trendRangeBtnActive: {
+    backgroundColor: t.accent,
+    borderColor: t.accent,
+  },
+  trendRangeBtnText: {
+    fontSize: 11,
+    fontWeight: "600",
+    color: t.textMuted,
+  },
+  trendRangeBtnTextActive: {
+    color: t.surface,
+  },
+  // ── Metric / Stat cards ──
+statCard: {
+    width: "49%",
+    backgroundColor: t.surface,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 12,
+    padding: 12,
+  },
+  metricCard: {
+    width: "49%",
+    backgroundColor: t.surface,
+    borderWidth: 1,
+    borderColor: t.line,
+    borderRadius: 12,
+    padding: 12,
+  },
+  statLabelRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    marginBottom: 6,
+  },
+  statLabel: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: t.accent,
+  },
+  statValue: {
+    fontSize: 28,
+    color: t.primary,
+    fontWeight: "800",
+  },
+  metricTitle: {
+    fontSize: 12,
+    color: t.accent,
+    fontWeight: "700",
+    marginBottom: 8,
+  },
+  metricValue: {
+    fontSize: 32,
+    color: t.primary,
+    fontWeight: "800",
+  },
+  metricUnit: {
+    fontSize: 16,
+    color: t.primary,
+    fontWeight: "700",
+  },
+  metricSubtitle: {
+    fontSize: 11,
+    color: "#9AA6B5",
+    marginTop: 6,
+  },
+  // ── Info cards ──
+  // infoCard: {
+  //   width: "49%",
+  //   backgroundColor: t.surface,
+  //   borderWidth: 1,
+  //   borderColor: t.line,
+  //   borderRadius: 12,
+  //   padding: 12,
+  //   gap: 4,
+    // },
+      infoCard: {
+      flex: 1,
+      backgroundColor: t.surface,
+      borderRadius: 12,
+      padding: 16,
+      alignItems: "center",
+    },
+  infoCardWarn: {
+    borderColor: "#EF4444",
+    backgroundColor: "#FEE2E2", // Light red background
+    borderWidth: 1,
+  },
+  infoCardValue: {
+    fontSize: 26,
+    fontWeight: "800",
+    color: t.primary,
+  },
+  infoCardLabel: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: t.text,
+  },
+  infoCardSub: {
+    fontSize: 10,
+    color: t.textMuted,
+  },
+  // ── Silent hives ──
+  silentHivesList: {
+    backgroundColor: "#1A0F0F",
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#FCA5A5",
+    padding: 10,
+    gap: 8,
+    marginBottom: 14,
+  },
+  silentHiveRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+  },
+  silentHiveText: {
+    flex: 1,
+    fontSize: 12,
+    fontWeight: "700",
+    color: t.text,
+  },
+  silentHiveTime: {
+    fontSize: 11,
+    color: "#EF4444",
+    fontWeight: "600",
+  },
+  // ── Correlation ──
+  corrRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 10,
+    marginTop: 10,
+  },
+  corrHiveChip: {
+    backgroundColor: t.surfaceSoft,
+    borderRadius: 8,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    minWidth: 72,
+  },
+  corrHiveChipText: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: t.primary,
+  },
+  corrTempBar: {
+    flex: 1,
+    height: 8,
+    backgroundColor: t.surfaceSoft,
+    borderRadius: 99,
+    overflow: "hidden",
+  },
+  corrTempFill: {
+    height: "100%",
+    backgroundColor: "#D97706",
+    borderRadius: 99,
+  },
+  corrTempValue: {
+    fontSize: 12,
+    fontWeight: "700",
+    color: t.primary,
+    minWidth: 44,
+    textAlign: "right",
+  },
+  // ── Metrics legend ──
+  metricsSubtitle: {
+    color: t.textMuted,
+    fontWeight: "600",
+    fontSize: 12,
+    marginTop: 2,
+    marginBottom: 10,
+  },
+  metricsLegendRow: {
+    flexDirection: "row",
+    gap: 14,
+    marginBottom: 8,
+  },
+  metricsLegendItem: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  legendDot: {
+    width: 10,
+    height: 10,
+    borderRadius: 10,
+    marginRight: 8,
+  },
+  legendText: {
+    color: t.textMuted,
+    fontWeight: "600",
+  },
+  });
+}
+
+export const dashboardStyles = createDashboardStyles(THEME);

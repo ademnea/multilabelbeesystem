@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "BeeSwarm",
+    "slug": "beeswarm",
+    "scheme": "beeswarm",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/bee.png",
+
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#f5ffeb"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "plugins": [
+      "expo-asset",
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/bee.png",
+          "sounds": []
+        }
+      ]
+    ],
+    "android": {
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "POST_NOTIFICATIONS"
+      ],
+      "usesCleartextTraffic": true,
+      "package": "com.anonymous.beeswarm",
+      "icon": "./assets/images/bee.png"
+    },
+    "ios": {
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true,
+          "NSExceptionDomains": {
+            "196.43.168.57": {
+              "NSExceptionAllowsInsecureHTTPLoads": true,
+              "NSIncludesSubdomains": true
+            }
+          }
+        },
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.bsads.beeswarm"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "c536bf8f-d6bd-4683-8882-da074e13c9c2"
+      }
+    }
+  }
+}
