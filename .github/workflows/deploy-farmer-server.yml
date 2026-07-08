@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_IMAGE: ${{ secrets.DOCKERHUB_USERNAME }}/farmer-data-source
+  DOCKER_IMAGE: ${{ secrets.DOCKER_USERNAME }}/farmer-data-source
   CONTAINER_NAME: farmer-data-source
   SERVER_HOST: 196.43.168.57
   SERVER_USER: ademneadev
@@ -26,8 +26,8 @@ jobs:
       - name: 🔐 Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: 🏗️ Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
